@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SaveMe Examples</title>
+    <meta charset="UTF-8">
+    <!-- Needed for Bootstrap Styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.css" rel="stylesheet" media="screen">
+    <!-- Loading jQuery - This is NOT a dependency for SaveMe.js
+        but it simplifies plating with the DOM -->
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+<!-- The container will be replaced by JQuery when an example is selected -->
+<div class="container" id="container">
+    <h1 class="text-center text-danger">SaveMe Examples</h1>
+    <hr/>
+    <hr/>
+    <div class="jumbotron">
+        <h2 class="text-warning">Instructions:</h2>
+
+        <p class="text-info">Select an example below</p>
+
+        <p>Type in a key and data and save it. Try deleting it too. Check Storage using your developer tools.</p>
+    </div>
+    <div class="row text-center">
+        <form>
+            <label class="well">
+                <span class="text-primary">Select an Example:</span>
+                <!-- Options MUST exactly match the HTML file name -->
+                <select id="exampleType">
+                    <option></option>
+                    <option>Basic</option>
+                    <option>Handlers</option>
+                </select>
+            </label>
+        </form>
+    </div>
+</div>
+<!-- Load the SaveMe Script -->
+<script src="../src/SaveMe.js"></script>
+<script>
+    var $exampleType = $('#exampleType');
+    // Register change event handler for the combo box
+    $exampleType.change(function () {
+//    alert('Handler called - ' + $exampleType.select().val());
+        loadExample($exampleType.select().val());
+    });
+
+    function loadExample(example) {
+        var name = "./" + example + ".html";
+        console.log("Loading... " + name);
+        $('#container').load(name);
+    }
+
+</script>
+</body>
+</html>

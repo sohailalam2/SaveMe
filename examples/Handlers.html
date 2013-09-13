@@ -1,0 +1,38 @@
+<div>
+    <h2 class="text-center text-muted"><a href="./index.html">INDEX</a></h2>
+</div>
+<h1 class="text-center text-danger">Handlers SaveMe Example</h1>
+<hr/>
+<hr/>
+<div class="jumbotron">
+    <h2 class="text-warning">Instructions:</h2>
+
+    <p class="text-info">This example shows how to use the SaveMe Handlers API in its simplest form.</p>
+
+    <p>Type in a key and data and save it. Try deleting it too. You should see alert notifications.</p>
+
+    <p>This example attaches <strong>ONE</strong> error handler and <strong>TWO</strong> success handlers</p>
+</div>
+<div class="row">
+    <table class="table table-responsive table-striped">
+        <thead>
+        <tr class="text-success">
+            <th class="text-left">KEY</th>
+            <th class="text-left">DATA</th>
+            <th class="text-right">ACTION</th>
+        </tr>
+        </thead>
+        <tbody id="messages">
+        <tr>
+            <th class="text-left"><input type="text" autofocus="on" class="col-lg-12" id="key"></th>
+            <th class="text-left"><input type="text" class="col-lg-12" id="data"></th>
+            <th class="text-right">
+                <button class="btn btn-block btn-success" id="btnSaveMe">SAVE ME !</button>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+    <hr/>
+</div>
+
+<script src="scripts/Handlers.js"></script>
